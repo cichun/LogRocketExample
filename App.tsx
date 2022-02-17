@@ -5,6 +5,9 @@ import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 
+import LogRocket from '@logrocket/react-native';
+LogRocket.init('fby0fm/logrocketexample')
+
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();

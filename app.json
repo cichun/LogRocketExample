@@ -19,16 +19,19 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cichun.LogRocketExample"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.cichun.LogRocketExample"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "plugins": ["@logrocket/react-native"]
   }
 }

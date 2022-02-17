@@ -7,21 +7,42 @@ import {
     Badge,
     Button,
     Card,
-    Chip,
+    Chip, ChipsInput,
     Colors,
     Drawer,
-    ExpandableSection,
+    ExpandableSection, ListItem, ProgressBar, SkeletonView,
     Spacings,
-    Typography
+    Typography,
+    Incubator
 } from "react-native-ui-lib";
 import {useState} from "react";
 
 export default function TabThreeScreen() {
     const [isExpanded, setExpanded] = useState(false);
+    const [isSkeleton, setSkeleton] = useState(true);
+    const [chips, setChips] = useState([{label: 'Falcon 9'}, {label: 'Enterprise'}, {label: 'Challenger', borderRadius: 0}]);
 
     return (
         <>
-            <ScrollView>
+            <ScrollView style={{padding:10}}>
+
+                {/*<SkeletonView*/}
+                {/*    template={SkeletonView.templates.LIST_ITEM}*/}
+                {/*    showContent={isSkeleton}*/}
+                {/*    renderContent={<ListItem><Text grey10 text60 marginL-10>The item</Text></ListItem>}*/}
+                {/*    times={10}*/}
+                {/*/>*/}
+
+                <Incubator.ChipsInput
+                    placeholder={'Placeholder'}
+                    chips={chips}
+                    defaultChipProps={{backgroundColor:'blue', labelStyle:{color:'white'}}}
+                    onChange={newChips => setChips(newChips)}
+                />
+
+                <ProgressBar progress={55} progressColor={Colors.red30}/>
+
+
                 <ExpandableSection
                     // top={true}
                     expanded={isExpanded}
